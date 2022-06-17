@@ -27,7 +27,7 @@ public class BasicConsumer {
         try (var consumer = new KafkaConsumer<String, String>(config)) {
             consumer.subscribe(Set.of(topic));
             while (true) {
-                final var records = consumer.poll(Duration.ofMillis(100));
+                final var records = consumer.poll(Duration.ofMillis(127000));
                 for (var record : records) {
                     System.out.format("Got record with value %s%n", record.value());
                 }
