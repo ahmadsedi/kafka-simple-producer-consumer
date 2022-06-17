@@ -20,7 +20,7 @@ public class BasicProducer {
     public static void main(String[] args) throws InterruptedException {
         final var topic = Constants.TOPIC_NAME;
         final Map<String, Object> config = Map.of(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG,
-                "localhost:9092", ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName(),
+                "kafka:9092", ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName(),
                 ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName(),
                 ProducerConfig.ENABLE_IDEMPOTENCE_CONFIG, true,
                 ProducerConfig.REQUEST_TIMEOUT_MS_CONFIG, 127000);

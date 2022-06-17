@@ -20,7 +20,7 @@ import java.util.Set;
 public class BasicConsumer {
     public static void main(String[] args) {
         final var topic = Constants.TOPIC_NAME;
-        final Map<String, Object> config = Map.of(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG,"localhost:9092",
+        final Map<String, Object> config = Map.of(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG,"kafka:9092",
                 ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName(),
                 ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName(),
                 ConsumerConfig.GROUP_ID_CONFIG, "basic-consumer-sample",
