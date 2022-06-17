@@ -29,6 +29,24 @@ services:
     environment:
       - KAFKA_ADVERTISED_HOST_NAME=zookeeper
 
+  consumer-service:
+    build:
+      context: .
+      dockerfile: Dockerfile-consumer
+    mem_limit: 512m
+    depends_on:
+      kafka:
+        condition: service_started
+
+  producer-service:
+    build:
+      context: .
+      dockerfile: Dockerfile-producer
+    mem_limit: 512m
+    depends_on:
+      kafka:
+        condition: service_started
+
 networks:
   kafka_network:
     name: kafka_docker_net
