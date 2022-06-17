@@ -1,5 +1,6 @@
 version: '2.1'
 
+services:
   kafka:
     image: wurstmeister/kafka:2.12-2.5.0
     mem_limit: 512m
