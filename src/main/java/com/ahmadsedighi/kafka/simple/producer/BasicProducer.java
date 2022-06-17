@@ -21,7 +21,8 @@ public class BasicProducer {
         final Map<String, Object> config = Map.of(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG,
                 "localhost:9092", ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName(),
                 ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName(),
-                ProducerConfig.ENABLE_IDEMPOTENCE_CONFIG, true);
+                ProducerConfig.ENABLE_IDEMPOTENCE_CONFIG, true,
+                ProducerConfig.REQUEST_TIMEOUT_MS_CONFIG, 127000);
         try (var producer = new KafkaProducer<String, String>(config)) {
             while (true) {
                 final var key = "myKey";
