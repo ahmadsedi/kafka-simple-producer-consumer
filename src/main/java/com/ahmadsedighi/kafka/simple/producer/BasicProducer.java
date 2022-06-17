@@ -1,5 +1,6 @@
 package com.ahmadsedighi.kafka.simple.producer;
 
+import com.ahmadsedighi.kafka.simple.Constants;
 import org.apache.kafka.clients.producer.Callback;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerConfig;
@@ -17,7 +18,7 @@ import java.util.Map;
 
 public class BasicProducer {
     public static void main(String[] args) throws InterruptedException {
-        final var topic = "simple-topic";
+        final var topic = Constants.TOPIC_NAME;
         final Map<String, Object> config = Map.of(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG,
                 "localhost:9092", ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName(),
                 ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName(),
